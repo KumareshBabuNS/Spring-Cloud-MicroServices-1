@@ -1,2 +1,6 @@
 
 EurekaServer/.idea/
+EurekaClient/.idea/
+*.class
+EurekaServer/build/
+EurekaClient/build/
