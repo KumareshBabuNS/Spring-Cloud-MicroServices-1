@@ -9,3 +9,6 @@ RibbonLoadBalance/build/
 RibbonLoadBalance/.gradle/
 EurekaServer/.gradle/
 *.jar
+FeignLoadBalance/.idea/
+FeignLoadBalance/.gradle/
+FeignLoadBalance/build/
