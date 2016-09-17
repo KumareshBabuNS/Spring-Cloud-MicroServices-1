@@ -22,6 +22,7 @@ apply plugin: "idea"
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 def SpringBootVersion = "1.4.0.RELEASE"
+def SpringCloudStarterVersion = "1.1.6.RELEASE"
 
 repositories {
     mavenLocal()
@@ -35,11 +36,12 @@ repositories {
 dependencies {
 
     compile(
-            "org.springframework.boot:spring-boot-starter-web:${SpringBootVersion}",
-            "org.springframework.boot:spring-boot-starter-actuator:${SpringBootVersion}",
-            "org.springframework.boot:spring-boot-starter-test:${SpringBootVersion}",
-            "org.springframework.cloud:spring-cloud-starter-eureka-server:1.1.6.RELEASE",
-            "org.springframework.cloud:spring-cloud-starter-ribbon:1.1.6.RELEASE",
+            "org.springframework.boot:spring-boot-starter-web:$SpringBootVersion",
+            "org.springframework.boot:spring-boot-starter-actuator:$SpringBootVersion",
+            "org.springframework.boot:spring-boot-starter-test:$SpringBootVersion",
+            "org.springframework.cloud:spring-cloud-starter-eureka-server:$SpringCloudStarterVersion",
+            "org.springframework.cloud:spring-cloud-starter-ribbon:$SpringCloudStarterVersion",
+            "org.springframework.cloud:spring-cloud-starter-hystrix:$SpringCloudStarterVersion",
     )
 
     testCompile(
