@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 //绑定该接口对应compute-service服务
-@FeignClient("compute-service")
+@FeignClient(value = "compute-service", fallback = ComputeClientHystrix.class)
 public interface ComputeClient {
     //@GetMapping("/add")这样会报错
     @RequestMapping(value = "/add",method = RequestMethod.GET)
