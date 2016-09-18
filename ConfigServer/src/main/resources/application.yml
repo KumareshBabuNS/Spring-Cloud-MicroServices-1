@@ -9,5 +9,5 @@ spring:
         git:
           uri: https://github.com/izhangzhihao/Spring-Cloud/
           username: izhangzhihao
-          password: 951753Zzh
+          password: ******
           search-paths: ConfigRepo
