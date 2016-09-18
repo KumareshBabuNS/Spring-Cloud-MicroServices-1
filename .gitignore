@@ -12,3 +12,4 @@ EurekaServer/.gradle/
 FeignLoadBalance/.idea/
 FeignLoadBalance/.gradle/
 FeignLoadBalance/build/
+ConfigServer/.idea/

@@ -1,0 +1,49 @@
+group "com.github.izhangzhihao"
+version "1.0-SNAPSHOT"
+
+buildscript {
+    repositories {
+        mavenLocal()
+        maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
+        jcenter()
+        mavenCentral()
+        maven { url "http://repo.spring.io/release" }
+        maven { url "https://repo.spring.io/libs-snapshot" }
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.4.0.RELEASE")
+    }
+}
+
+apply plugin: "java"
+apply plugin: "spring-boot"
+apply plugin: "idea"
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+def SpringBootVersion = "1.4.0.RELEASE"
+def SpringCloudStarterVersion = "1.1.6.RELEASE"
+
+repositories {
+    mavenLocal()
+    maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
+    jcenter()
+    mavenCentral()
+    maven { url "http://repo.spring.io/release" }
+    maven { url "https://repo.spring.io/libs-snapshot" }
+}
+
+dependencies {
+
+    compile(
+            "org.springframework.boot:spring-boot-starter-web:$SpringBootVersion",
+            "org.springframework.boot:spring-boot-starter-actuator:$SpringBootVersion",
+            "org.springframework.boot:spring-boot-starter-test:$SpringBootVersion",
+            "org.springframework.cloud:spring-cloud-config-server:1.2.0.M1",
+    )
+
+    testCompile(
+            //jUnit
+            "junit:junit:4.12",
+    )
+}
