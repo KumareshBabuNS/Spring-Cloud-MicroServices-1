@@ -13,3 +13,7 @@ FeignLoadBalance/.idea/
 FeignLoadBalance/.gradle/
 FeignLoadBalance/build/
 ConfigServer/.idea/
+GetConfig/.idea/
+ConfigServer/.gradle/
+ConfigServer/build/
+GetConfig/build/

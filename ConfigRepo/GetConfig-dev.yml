@@ -1,8 +1,8 @@
 spring:
   application:
-    name: compute-service
+    name: GetConfig
 server:
-  port: 8010
+  port: 8040
 eureka:
   client:
     serviceUrl:
