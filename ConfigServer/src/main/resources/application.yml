@@ -9,5 +9,9 @@ spring:
         git:
           uri: https://github.com/izhangzhihao/Spring-Cloud/
           username: izhangzhihao
-          password: ******
+          password: 11111111111111
           search-paths: ConfigRepo
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8000/eureka/

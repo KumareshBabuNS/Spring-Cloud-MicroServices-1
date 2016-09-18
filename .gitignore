@@ -17,3 +17,4 @@ GetConfig/.idea/
 ConfigServer/.gradle/
 ConfigServer/build/
 GetConfig/build/
+GetConfig/.gradle/
