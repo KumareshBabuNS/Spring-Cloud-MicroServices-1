@@ -8,7 +8,7 @@ eureka:
     # register-with-eureka: false
     # fetch-registry: false
     service-url:
-          defaultZone: http://localhost:8000/eureka/,http://localhost:8001/eureka/
+          defaultZone: http://localhost:8001/eureka/
   server:
     enable-self-preservation: false
   instance:
@@ -24,7 +24,7 @@ eureka:
     # register-with-eureka: false
     # fetch-registry: false
     service-url:
-          defaultZone: http://localhost:8000/eureka/,http://localhost:8001/eureka/
+          defaultZone: http://localhost:8000/eureka/
   server:
     enable-self-preservation: false
   instance:
