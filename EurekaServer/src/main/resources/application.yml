@@ -1,6 +1,8 @@
 ---
 spring:
   profiles: EurekaServer1
+  application:
+    name: EurekaServer # 192.168.1.129:EurekaServer:8000
 server:
   port: 8000
 eureka:
@@ -13,10 +15,13 @@ eureka:
     enable-self-preservation: false
   instance:
     hostname: eurekaserver1
+    appname: EurekaServer # Application 表单(Instances currently registered with Eureka)
 
 ---
 spring:
   profiles: EurekaServer2
+  application:
+    name: EurekaServer
 server:
   port: 8001
 eureka:
@@ -29,3 +34,7 @@ eureka:
     enable-self-preservation: false
   instance:
     hostname: eurekaserver2
+    appname: EurekaServer
+# 这里需要改host
+# 127.0.0.1 eurekaserver1
+# 127.0.0.1 eurekaserver2
