@@ -8,11 +8,11 @@ eureka:
     # register-with-eureka: false
     # fetch-registry: false
     service-url:
-          defaultZone: http://localhost:8001/eureka/
+          defaultZone: http://eurekaserver2:8001/eureka/
   server:
     enable-self-preservation: false
   instance:
-    appname: EurekaServer
+    hostname: eurekaserver1
 
 ---
 spring:
@@ -24,8 +24,8 @@ eureka:
     # register-with-eureka: false
     # fetch-registry: false
     service-url:
-          defaultZone: http://localhost:8000/eureka/
+          defaultZone: http://eurekaserver1:8000/eureka/
   server:
     enable-self-preservation: false
   instance:
-    appname: EurekaServer
+    hostname: eurekaserver2
