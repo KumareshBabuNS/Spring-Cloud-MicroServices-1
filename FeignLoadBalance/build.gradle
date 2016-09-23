@@ -11,7 +11,7 @@ buildscript {
         maven { url "https://repo.spring.io/libs-snapshot" }
     }
     dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.4.0.RELEASE")
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.4.1.RELEASE")
     }
 }
 
@@ -21,8 +21,8 @@ apply plugin: "idea"
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
-def SpringBootVersion = "1.4.0.RELEASE"
-def SpringCloudStarterVersion = "1.1.6.RELEASE"
+def SpringBootVersion = "1.4.1.RELEASE"
+def SpringCloudStarterVersion = "1.2.0.RELEASE"
 
 repositories {
     mavenLocal()
@@ -41,6 +41,8 @@ dependencies {
             "org.springframework.boot:spring-boot-starter-test:$SpringBootVersion",
             "org.springframework.cloud:spring-cloud-starter-eureka-server:$SpringCloudStarterVersion",
             "org.springframework.cloud:spring-cloud-starter-feign:$SpringCloudStarterVersion",
+            "org.springframework.cloud:spring-cloud-starter-hystrix:$SpringCloudStarterVersion",
+            "org.springframework.cloud:spring-cloud-starter-hystrix-dashboard:$SpringCloudStarterVersion",
     )
 
     testCompile(
