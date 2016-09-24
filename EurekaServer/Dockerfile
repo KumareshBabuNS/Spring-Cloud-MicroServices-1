@@ -7,6 +7,8 @@ RUN export GRADLE_HOME=/home/gradle-3.1
 RUN export PATH=$PATH:$GRADLE_HOME/bin
 RUN git clone https://github.com/izhangzhihao/Spring-Cloud.git
 RUN cd Spring-Cloud/EurekaServer
+RUN gradle -version
+RUN gradle build
 RUN gradle bootRepackage
 RUN java -jar build/libs/EurekaServer-1.0-SNAPSHOT.jar --spring.profiles.active=EurekaServer1
 EXPOSE 8000
