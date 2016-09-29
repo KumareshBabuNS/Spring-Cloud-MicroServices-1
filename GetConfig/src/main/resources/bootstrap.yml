@@ -1,5 +1,7 @@
 # bootstrap.properties的加载也是先于application.properties
+---
 spring:
+  profiles: GetConfig1
   application:
     name: GetConfig
   cloud:
@@ -7,7 +9,31 @@ spring:
       profile: dev
       uri: http://localhost:8030/
       label: master
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: root
+    password: root
 server:
   port: 8040
+
+
+---
+spring:
+  profiles: GetConfig2
+  application:
+    name: GetConfig
+  cloud:
+    config:
+      profile: dev
+      uri: http://localhost:8030/
+      label: master
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: root
+    password: root
+server:
+  port: 8041
 #从configServer上下载的配置会覆盖这个配置文件
 

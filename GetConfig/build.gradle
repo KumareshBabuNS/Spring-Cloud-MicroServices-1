@@ -36,10 +36,11 @@ repositories {
 dependencies {
 
     compile(
-            "org.springframework.boot:spring-boot-starter-actuator:$SpringBootVersion",
-            "org.springframework.boot:spring-boot-starter-test:$SpringBootVersion",
+            "org.springframework.boot:spring-boot-starter-actuator",
+            "org.springframework.boot:spring-boot-starter-test",
             "org.springframework.cloud:spring-cloud-starter-eureka:$SpringCloudStarterVersion",
             "org.springframework.cloud:spring-cloud-starter-config:$SpringCloudStarterVersion",
+            "org.springframework.cloud:spring-cloud-starter-bus-amqp:$SpringCloudStarterVersion",
     )
 
     testCompile(

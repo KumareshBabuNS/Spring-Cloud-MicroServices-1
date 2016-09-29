@@ -1,3 +1,4 @@
+---
 server:
   port: 8030
 spring:
@@ -11,6 +12,27 @@ spring:
           username: izhangzhihao
           password: 11111111111111
           search-paths: ConfigRepo
+  profiles: ConfigServer1
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8000/eureka/
+
+---
+server:
+  port: 8031
+spring:
+  application:
+    name: ConfigServer
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/izhangzhihao/Spring-Cloud/
+          username: izhangzhihao
+          password: 11111111111111
+          search-paths: ConfigRepo
+  profiles: ConfigServer2
 eureka:
   client:
     serviceUrl:
