@@ -1,16 +1,5 @@
 spring:
-  application:
-    name: EurekaServer
-server:
-  port: 8000
-eureka:
-  client:
-    service-url:
-          defaultZone: http://127.0.0.1:8000/eureka/
-  server:
-    enable-self-preservation: false
-  instance:
-    appname: EurekaServer
+  profiles.active: EurekaServer1
 
 ---
 spring:
