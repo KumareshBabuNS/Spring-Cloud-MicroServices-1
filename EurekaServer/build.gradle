@@ -7,17 +7,20 @@ buildscript {
         maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
         jcenter()
         mavenCentral()
-        maven { url "http://repo.spring.io/release" }
-        maven { url "https://repo.spring.io/libs-snapshot" }
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:1.4.1.RELEASE")
+        classpath("com.bmuschko:gradle-docker-plugin:3.0.4")
     }
 }
+
+import com.bmuschko.gradle.docker.tasks.image.Dockerfile
+import com.bmuschko.gradle.docker.tasks.image.DockerBuildImage
 
 apply plugin: "java"
 apply plugin: "spring-boot"
 apply plugin: "idea"
+apply plugin: "com.bmuschko.docker-remote-api"
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
@@ -29,8 +32,6 @@ repositories {
     maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
     jcenter()
     mavenCentral()
-    maven { url "http://repo.spring.io/release" }
-    maven { url "https://repo.spring.io/libs-snapshot" }
 }
 
 dependencies {
@@ -45,4 +46,16 @@ dependencies {
             //jUnit
             "junit:junit:4.12",
     )
+}
+
+task createDockerfile(type: Dockerfile) {
+    destFile = project.file('build/dockerFile/Dockerfile')
+    from 'java'
+    maintainer 'izhangzhihao "izhangzhihao@hotmail.com"'
+}
+
+task buildImage(type: DockerBuildImage) {
+    dependsOn createDockerfile
+    inputDir = createDockerfile.destFile.parentFile
+    tag = 'izhangzhihao/test'
 }
