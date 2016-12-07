@@ -1,0 +1,71 @@
+group "com.github.izhangzhihao"
+version "1.0-SNAPSHOT"
+
+buildscript {
+    repositories {
+        mavenLocal()
+        maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
+        jcenter()
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.4.2.RELEASE")
+    }
+}
+
+
+allprojects {
+}
+
+subprojects {
+    apply plugin: "java"
+    apply plugin: "org.springframework.boot"
+    apply plugin: "idea"
+
+    dependencyManagement {
+        imports {
+            mavenBom "org.springframework.cloud:spring-cloud-dependencies:Camden.SR3"
+        }
+    }
+
+    sourceCompatibility = 1.8
+
+    repositories {
+        mavenLocal()
+        maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
+        jcenter()
+        mavenCentral()
+    }
+
+    [compileJava, compileTestJava, javadoc]*.options*.encoding = 'UTF-8'
+
+    dependencies {
+
+        compile(
+                "org.springframework.boot:spring-boot-starter-web",
+                "org.springframework.boot:spring-boot-starter-actuator",
+                "org.springframework.boot:spring-boot-starter-test",
+
+                "org.springframework.cloud:spring-cloud-starter-eureka",
+        )
+
+
+        testCompile(
+                "junit:junit:4.12",
+        )
+    }
+}
+
+project(':API-Gateway') {
+    dependencies {
+        compile(
+                "org.springframework.boot:spring-boot-starter-web",
+                "org.springframework.boot:spring-boot-starter-actuator",
+                "org.springframework.boot:spring-boot-starter-test",
+                "org.springframework.cloud:spring-cloud-starter-eureka-server",
+                "org.springframework.cloud:spring-cloud-starter-ribbon",
+                "org.springframework.cloud:spring-cloud-starter-hystrix",
+                "org.springframework.cloud:spring-cloud-starter-hystrix-dashboard",
+        )
+    }
+}

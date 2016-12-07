@@ -1,0 +1,11 @@
+
+bootRepackage {
+    mainClass = 'Application'
+}
+
+dependencies {
+    //compile project(':shared')
+    compile(
+            "org.springframework.cloud:spring-cloud-starter-zuul",
+    )
+}
