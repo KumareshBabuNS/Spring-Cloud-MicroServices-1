@@ -1,0 +1,11 @@
+server:
+  port: 8000
+spring:
+  application:
+    name: Configuration-Service
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/izhangzhihao/Spring-Cloud-Microservices/
+          search-paths: ConfigRepo

@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: API-Gateway
+  cloud:
+    config:
+      uri:
+      profile: production
+      label: master
+      discovery:
+              enabled: true
+              service-id: ConfigServer
+encrypt:
+  failOnError: false
