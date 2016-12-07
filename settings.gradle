@@ -1,4 +1,5 @@
 rootProject.name = 'Spring-Cloud-MicroService'
 include 'API-Gateway'
 include 'Configuration-Service'
+include 'Registration-Center'
 

@@ -1,0 +1,9 @@
+bootRepackage {
+    mainClass = 'Application'
+}
+
+dependencies {
+    compile(
+            "org.springframework.cloud:spring-cloud-starter-eureka-server",
+    )
+}

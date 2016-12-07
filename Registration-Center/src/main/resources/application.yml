@@ -1,0 +1,10 @@
+server:
+  port: 9000
+spring:
+  application:
+    name: Registration-Center
+eureka:
+  client:
+    allow-redirects: true
+    service-url:
+            defaultZone: http://localhost:9000/eureka/

@@ -8,6 +8,10 @@ spring:
       label: master
       discovery:
               enabled: true
-              service-id: ConfigServer
+              service-id: Configuration-Service
 encrypt:
   failOnError: false
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9000/eureka/
