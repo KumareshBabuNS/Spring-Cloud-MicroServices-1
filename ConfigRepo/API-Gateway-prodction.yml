@@ -5,7 +5,7 @@ spring:
     config:
       uri:
       profile: production
-      label: master
+      #label: master
       discovery:
               enabled: true
               service-id: Configuration-Service
