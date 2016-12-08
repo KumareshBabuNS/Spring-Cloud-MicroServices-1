@@ -14,10 +14,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class SuggestionController {
     @Autowired
-    private SuggestionClient client;
+    //@Qualifier("suggestionClient")
+    private SuggestionClient suggestionClient;
 
     @RequestMapping(value = "/suggest/", method = RequestMethod.GET)
     public String suggest(@RequestParam(value = "pattern") String pattern) {
-        return client.suggest(pattern);
+        return suggestionClient.suggest(pattern);
     }
 }

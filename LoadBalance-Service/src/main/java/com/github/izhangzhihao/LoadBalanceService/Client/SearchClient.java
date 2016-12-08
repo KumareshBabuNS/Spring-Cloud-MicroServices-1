@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Component
-@FeignClient(value = "Search-Service",fallback = SearchClientHystrix.class)
+@FeignClient(value = "Search-Service", fallback = SearchClientHystrix.class)
 public interface SearchClient {
     @RequestMapping(method = RequestMethod.GET, value = "/search/")
     String search(@RequestParam(value = "pattern") String pattern);
