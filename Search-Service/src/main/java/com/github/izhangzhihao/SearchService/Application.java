@@ -1,4 +1,4 @@
-package com.github.izhangzhihao.MovieService;
+package com.github.izhangzhihao.SearchService;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

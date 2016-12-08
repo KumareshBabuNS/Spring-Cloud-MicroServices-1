@@ -13,9 +13,12 @@ server:
   port: 7000
 zuul:
   routes:
-    api-a:
-      path: /api-a/**
-      serviceId: Compute-Service
+    search:
+      path: /search/**
+      serviceId: Search-Service
+    suggest:
+      path: /suggest/**
+      serviceId: Suggest-Service
 eureka:
   client:
     serviceUrl:

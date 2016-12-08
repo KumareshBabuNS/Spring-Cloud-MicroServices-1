@@ -1,5 +1,5 @@
 bootRepackage {
-    mainClass = 'com.github.izhangzhihao.SuggestionService.Application'
+    mainClass = 'com.github.izhangzhihao.SearchService.Application'
 }
 
 dependencies {
@@ -7,4 +7,3 @@ dependencies {
             "org.springframework.cloud:spring-cloud-starter-config",
     )
 }
-

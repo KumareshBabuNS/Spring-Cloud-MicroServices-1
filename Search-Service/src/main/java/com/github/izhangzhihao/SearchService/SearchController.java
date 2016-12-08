@@ -1,4 +1,4 @@
-package com.github.izhangzhihao.MovieService;
+package com.github.izhangzhihao.SearchService;
 
 
 import org.apache.log4j.Logger;
@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
  */
 @SuppressWarnings("SpringAutowiredFieldsWarningInspection")
 @RestController
-public class SearchServiceController {
+public class SearchController {
     private final Logger logger = Logger.getLogger(getClass());
 
     @SuppressWarnings("SpringJavaAutowiringInspection")

@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: Search-Service
+  cloud:
+    config:
+      uri:
+      profile: production
+      #label: master
+      discovery:
+              enabled: true
+              service-id: Configuration-Center
+encrypt:
+  failOnError: false
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9000/eureka/

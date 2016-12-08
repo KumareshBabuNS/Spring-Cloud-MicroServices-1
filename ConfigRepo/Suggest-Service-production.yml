@@ -1,6 +1,6 @@
 spring:
   application:
-    name: Movie-Service
+    name: Suggest-Service
   cloud:
     config:
       uri:
@@ -10,7 +10,7 @@ spring:
               enabled: true
               service-id: Configuration-Center
 server:
-  port: 6000
+  port: 4000
 eureka:
   client:
     serviceUrl:
