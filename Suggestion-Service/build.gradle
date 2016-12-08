@@ -1,0 +1,9 @@
+bootRepackage {
+    mainClass = 'com.github.izhangzhihao.SuggestionService.Application'
+}
+
+dependencies {
+    compile(
+    )
+}
+
