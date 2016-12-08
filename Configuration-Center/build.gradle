@@ -1,5 +1,5 @@
 bootRepackage {
-    mainClass = 'com.github.izhangzhihao.ConfigurationService.Application'
+    mainClass = 'com.github.izhangzhihao.ConfigurationCenter.Application'
 }
 
 dependencies {

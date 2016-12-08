@@ -1,0 +1,12 @@
+bootRepackage {
+    mainClass = 'com.github.izhangzhihao.LoadBalanceService.Application'
+}
+
+dependencies {
+    compile(
+            "org.springframework.cloud:spring-cloud-starter-feign",
+            "org.springframework.cloud:spring-cloud-starter-config",
+            "org.springframework.cloud:spring-cloud-starter-hystrix-dashboard",
+    )
+}
+

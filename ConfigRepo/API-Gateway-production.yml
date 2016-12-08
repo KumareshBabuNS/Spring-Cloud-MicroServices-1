@@ -8,7 +8,7 @@ spring:
       #label: master
       discovery:
               enabled: true
-              service-id: Configuration-Service
+              service-id: Configuration-Center
 server:
   port: 7000
 zuul:
