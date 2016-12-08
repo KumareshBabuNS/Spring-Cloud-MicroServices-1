@@ -15,11 +15,12 @@ import org.springframework.web.bind.annotation.*;
 public class SearchServiceController {
     private final Logger logger = Logger.getLogger(getClass());
 
+    @SuppressWarnings("SpringJavaAutowiringInspection")
     @Autowired
     private DiscoveryClient client;
 
-    @RequestMapping(value = "/search/pattern/{pattern}", method = RequestMethod.GET)
-    public String search(@PathVariable String pattern) {
+    @RequestMapping(value = "/search/", method = RequestMethod.GET)
+    public String search(@RequestParam(value = "pattern") String pattern) {
         ServiceInstance instance = client.getLocalServiceInstance();
         String r = "搜索：" + pattern;
         logger.info("/search/pattern/" + pattern + ", host:" + instance.getHost() + ", service_id:" + instance.getServiceId() + ", result:" + r);
