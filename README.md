@@ -5,7 +5,7 @@
     gradle clean build buildDocker
 
 # 运行
-    docker run -i -t -p 127.0.0.1:8000:8000  --name EurekaServer izhangzhihao/spring-cloud
+    docker-compose up
 
 # 配置
     配置中心 端口号 8000
