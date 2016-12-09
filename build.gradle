@@ -10,6 +10,8 @@ buildscript {
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:1.4.2.RELEASE")
+        //classpath("com.bmuschko:gradle-docker-plugin:3.0.4")
+        classpath("se.transmode.gradle:gradle-docker:1.2")
     }
 }
 
@@ -21,6 +23,8 @@ subprojects {
     apply plugin: "java"
     apply plugin: "org.springframework.boot"
     apply plugin: "idea"
+    //apply plugin: "com.bmuschko.docker-remote-api"
+    apply plugin: "docker"
 
     dependencyManagement {
         imports {
@@ -44,7 +48,6 @@ subprojects {
         compile(
                 "org.springframework.boot:spring-boot-starter-web",
                 "org.springframework.boot:spring-boot-starter-actuator",
-                "org.springframework.boot:spring-boot-starter-test",
 
                 "org.springframework.cloud:spring-cloud-starter-eureka",
         )
@@ -52,20 +55,25 @@ subprojects {
 
         testCompile(
                 "junit:junit:4.12",
+                "org.springframework.boot:spring-boot-starter-test",
         )
     }
-}
 
-project(':API-Gateway') {
-    dependencies {
-        compile(
-                "org.springframework.boot:spring-boot-starter-web",
-                "org.springframework.boot:spring-boot-starter-actuator",
-                "org.springframework.boot:spring-boot-starter-test",
-                "org.springframework.cloud:spring-cloud-starter-eureka-server",
-                "org.springframework.cloud:spring-cloud-starter-ribbon",
-                "org.springframework.cloud:spring-cloud-starter-hystrix",
-                "org.springframework.cloud:spring-cloud-starter-hystrix-dashboard",
-        )
+    task buildDocker(type: Docker, dependsOn: build) {
+        //def projectName = project.name.toLowerCase()
+        def projectName = "izhangzhihao"
+        def jarName = jar.baseName.toLowerCase()
+        maintainer = "izhangzhihao@hotmail.com"
+        //tag = "api-gateway"
+        //push = true
+        //applicationName = jarName
+        tag = "$projectName/$jarName"
+        dockerfile = file('src/main/docker/Dockerfile')
+        doFirst {
+            copy {
+                from jar
+                into stageDir
+            }
+        }
     }
 }

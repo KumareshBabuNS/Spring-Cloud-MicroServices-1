@@ -1,7 +1,10 @@
 # Spring-Cloud [![Build Status](https://travis-ci.org/izhangzhihao/Spring-Cloud-MicroServices.svg?branch=master)](https://travis-ci.org/izhangzhihao/Spring-Cloud-MicroServices)
 [![](https://images.microbadger.com/badges/image/izhangzhihao/spring-cloud.svg)](https://hub.docker.com/r/izhangzhihao/spring-cloud/) [![](https://images.microbadger.com/badges/version/izhangzhihao/spring-cloud.svg)](https://hub.docker.com/r/izhangzhihao/spring-cloud/)
 
-#  运行EurekaServer
+# 编译
+    gradle clean build buildDocker
+
+# 运行
     docker run -i -t -p 127.0.0.1:8000:8000  --name EurekaServer izhangzhihao/spring-cloud
 
 # 配置
