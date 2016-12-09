@@ -24,7 +24,7 @@ loadbalance-service:
    - registration-center
    - configuration-center
    - search-service
-   - suggest-service
+   - suggestion-service
 search-service:
   image: izhangzhihao/search-service
   ports:
@@ -32,12 +32,10 @@ search-service:
   links:
    - registration-center
    - configuration-center
-   - loadbalance-service
-suggest-service:
-  image: izhangzhihao/suggest-service
+suggestion-service:
+  image: izhangzhihao/suggestion-service
   ports:
    - "4000:4000"
   links:
    - registration-center
    - configuration-center
-   - loadbalance-service
