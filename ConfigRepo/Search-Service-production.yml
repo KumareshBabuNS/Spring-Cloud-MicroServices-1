@@ -14,4 +14,4 @@ server:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:9000/eureka/
+      defaultZone: http://registration-center:9000/eureka/

@@ -15,11 +15,11 @@ zuul:
   routes:
     search:
       path: /search/**
-      serviceId: Search-Service
+      serviceId: LoadBalance-Service
     suggest:
       path: /suggest/**
-      serviceId: Suggest-Service
+      serviceId: LoadBalance-Service
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:9000/eureka/
+      defaultZone: http://registration-center:9000/eureka/

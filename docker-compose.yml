@@ -1,0 +1,43 @@
+registration-center:
+  image: izhangzhihao/registration-center
+  ports:
+   - "9000:9000"
+configuration-center:
+  image: izhangzhihao/configuration-center
+  ports:
+   - "8000:8000"
+  links:
+     - registration-center
+api-gateway:
+  image: izhangzhihao/api-gateway
+  ports:
+   - "7000:7000"
+  links:
+   - registration-center
+   - configuration-center
+   - loadbalance-service
+loadbalance-service:
+  image: izhangzhihao/loadbalance-service
+  ports:
+   - "5000:5000"
+  links:
+   - registration-center
+   - configuration-center
+   - search-service
+   - suggest-service
+search-service:
+  image: izhangzhihao/search-service
+  ports:
+   - "6000:6000"
+  links:
+   - registration-center
+   - configuration-center
+   - loadbalance-service
+suggest-service:
+  image: izhangzhihao/suggest-service
+  ports:
+   - "4000:4000"
+  links:
+   - registration-center
+   - configuration-center
+   - loadbalance-service
