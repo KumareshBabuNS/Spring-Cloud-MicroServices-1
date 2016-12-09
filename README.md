@@ -1,4 +1,4 @@
-# Spring-Cloud [![Build Status](https://travis-ci.org/izhangzhihao/Spring-Cloud-MicroServices.svg?branch=master)](https://travis-ci.org/izhangzhihao/Spring-Cloud-MicroServices)
+# Build MicroService with Spring Cloud & Docker [![Build Status](https://travis-ci.org/izhangzhihao/Spring-Cloud-MicroServices.svg?branch=master)](https://travis-ci.org/izhangzhihao/Spring-Cloud-MicroServices)
 [![](https://images.microbadger.com/badges/image/izhangzhihao/spring-cloud.svg)](https://hub.docker.com/r/izhangzhihao/spring-cloud/) [![](https://images.microbadger.com/badges/version/izhangzhihao/spring-cloud.svg)](https://hub.docker.com/r/izhangzhihao/spring-cloud/)
 
 # 编译
