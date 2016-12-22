@@ -8,3 +8,6 @@ eureka:
     allow-redirects: true
     service-url:
             defaultZone: http://registration-center:9000/eureka/
+  server:
+    enable-self-preservation: true
+    eviction-interval-timer-in-ms: 5000
